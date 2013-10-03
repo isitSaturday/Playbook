@@ -1,0 +1,30 @@
+{
+	"name": "isitsaturday/playbook",
+	"description": "A PHP data library inspired by Backbone.js",
+	"type": "library",
+	"keywords": ["data"],
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Dave Widmer",
+			"email": "dwidmer@isitsaturday.com",
+			"role": "Developer"
+		}
+	],
+	"require": {
+		"php": ">=5.3",
+		"symfony/event-dispatcher": "2.3.x"
+	},
+	"require-dev": {
+		"phing/phing": "2.6.x",
+		"phpunit/phpunit": "3.7.x"
+	},
+	"autoload": {
+		"psr-0": {
+			"IsItSaturday\\Playbook": "src/"
+		}
+	},
+	"config": {
+		"bin-dir": "bin"
+	}
+}
