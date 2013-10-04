@@ -1,5 +1,7 @@
 <?php
 
+require_once 'classes/Nametastic.php';
+
 use IsItSaturday\Playbook\Model;
 
 class ModelTest extends PHPUnit_Framework_TestCase
@@ -94,19 +96,4 @@ class ModelTest extends PHPUnit_Framework_TestCase
 		$this->assertEmpty($this->model->errors());
 	}
 
-}
-
-class Nametastic
-{
-	public $data;
-
-	public function __construct(array $data)
-	{
-		$this->data = $data;
-	}
-
-	public function reverseName()
-	{
-		return strrev($this->data['name']);
-	}
 }
