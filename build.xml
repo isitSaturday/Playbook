@@ -9,6 +9,7 @@
 		<exec executable="${project.basedir}/bin/phpunit" passthru="true" checkreturn="true" escape="false">
 			<arg value="--colors" />
 			<arg value="--verbose" />
+			<arg value="--coverage-text" />
 			<arg value="${project.basedir}/tests/" />
 		</exec>
 	</target>
