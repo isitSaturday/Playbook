@@ -27,7 +27,7 @@ class Sync extends Facade
 	{
 		if (self::$sync === null)
 		{
-			throw new \LogicException('Please run Sync::setup');
+			throw new \LogicException('Please run \\IsItSaturday\\Playbook\\Facades\\Sync::setup');
 		}
 
 		return self::$sync;
