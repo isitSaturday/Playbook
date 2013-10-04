@@ -4,7 +4,7 @@ namespace IsItSaturday\Playbook\Facades;
 
 class Sync extends Facade
 {
-	private static $pdo = null;
+	private static $sync = null;
 
 	/**
 	 * Setup the PDO instance that powers all sync operations.
@@ -16,24 +16,21 @@ class Sync extends Facade
 	 */
 	public static function setup($dsn, $username = '', $password = '', $driver_options = array())
 	{
-		if ($dsn instanceof \PDO)
-		{
-			self::$pdo = $dsn;
-		}
-		else
-		{
-			self::$pdo = new \PDO($dsn, $username, $password, $driver_options);
-		}
+		$pdo = ($dsn instanceof \PDO) ?
+			$dsn :
+			new \PDO($dsn, $username, $password, $driver_options);
+
+		self::$sync = new \IsItSaturday\Playbook\Sync($pdo);
 	}
 
 	public static function getInstance()
 	{
-		if (self::$pdo === null)
+		if (self::$sync === null)
 		{
 			throw new \LogicException('Please run Sync::setup');
 		}
 
-		return self::$pdo;
+		return self::$sync;
 	}
 
 }
