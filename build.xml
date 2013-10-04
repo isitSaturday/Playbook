@@ -7,10 +7,8 @@
 
 	<target name="phpunit" description="Run the phpunit tests">
 		<exec executable="${project.basedir}/bin/phpunit" passthru="true" checkreturn="true" escape="false">
-			<arg value="--colors" />
-			<arg value="--verbose" />
-			<arg value="--coverage-text" />
-			<arg value="${project.basedir}/tests/" />
+			<arg value="-c" />
+			<arg value="${project.basedir}/phpunit.xml" />
 		</exec>
 	</target>
 
